@@ -1,0 +1,204 @@
+REACT- frontend technology
+-----------------------------------
+-used to create UI
+
+UI-user  interface
+-------------------------
+point where user-computer interaction/communication take place
+
+react make use of JAVASCRIPT -Libraries to create frontend
+
+libraries: predefined code - to do particular task
+
+
+framework- predefined code
+
+refer libraries vs framework
+
+
+features of react
+-----------------
+1) to create ui/frontend
+2)single page application - webapplication or website that interact with the user by dynamicaly rewriting the current webpage with new data from the webserver,instead of the default method of loading the new html in browser
+3)Declarative
+ doesnot access real DOM
+4)Virtual DOM -(created by react)  React uses virtual DOM to enhance its performance. It uses the observable to detect state and prop changes. React uses an efficient diff algorithm to compare the versions of virtual DOM.
+  eg) onclick=> onClick   the process of comparing real and virtual dom is called "diffing".
+  reconciliation-process of updating real DOM
+
+
+5)immutable variables - cannot change the values
+6) pure functions - functions that accepts immutable variables and returns object and the result only depend on variables.
+  eg: react components
+7) data sharing - unidirectional  - parent to child
+8) language - JSX - JAVASCRIPT XML -(combination of javscript ,html,css)
+
+     -jsx expressions must be inside a single parent
+     - empty tag<> </>-react fragments
+     -jscode-jsx- jscode should be enclosed in curly bracket
+
+
+9) transpiling: process of comverting jsx -html css JAVASCRIPT
+                Babel - convertor -automatically install 
+
+
+
+
+
+
+                how to create react project
+                -----------------------------------------------
+                1)npx create-react-app projectname
+                    npx-node package executor  - execute
+                    npm-node package manager - libraries
+
+                 2) change directory - cd projectname
+                 3)run -  npm start
+              ----------------------------------------------------
+
+    1) readme.md - holds the description about the file
+                eg)  localhost , npm start etc-- with description
+    2) package.json - hold npm configuration
+    3) pacakage-lock.json -holds the versions of install libraries
+    4).gitignore -it holds files that neednot to be pushed into git
+    5)node_modules - hold the copy of the libraries that are installed into the project
+        npm install
+    6) public folder - holds files that can be accessed througout the project
+                                           the only page that browser loads is index.html       
+
+                                           meta data is the data inside data     
+         reportWebVitals- to measure the performance of the react application         
+
+
+         we must export files that needs to be placed into another location and we must import it in the required location
+
+
+
+         components
+         ---------------------
+         basic unit of react applications 
+         -should starts with capital letter
+         -if component need to be acceseed in other files then it need to be exported from the created file and to be imported in the file where it need to be accessed
+
+         different types of components
+         -----------------------
+         1)functional component
+         eg: App component
+         fucntion componentname(){
+          //jsc code
+          return{
+            //jsx code
+          }
+         }
+
+         2)class component
+         -namse should starr with capital letter
+         -older way of creating react components
+
+         syntax
+
+class componentname extends react.components{
+  render(){
+    return
+  }
+}
+
+export default componentname;
+
+how data sharing between the components
+-------------------
+unidirectional - parent-child
+
+props- object - data are shared
+(key:value)
+
+props should be passed as an argument in child component
+
+object destructuring
+------------------------
+{key,.......} = props
+-keys in curly bracket is passed as argument
+
+how to give style to react component using css
+-----------------------
+1)inline
+2)external
+
+inline
+--------------------
+style={{property:value,}}
+
+
+external
+----------------
+1) should have a external file with extension as .css
+2) should import this file in the require component
+     import 'url'
+     3) css node_modules
+     -file extension - filename.module.css
+     -can store into a variable and style using that variable
+     - can access throughout the project
+     -can only create in src folder.
+
+     How react handles Event
+     --------------------------------------
+     function without argument - give only function name
+     function with arguments - funcyion name with argument in parathesis - call back function
+
+
+how to get input from the input box
+-------------------
+html = inputid.value
+onchange()
+
+
+
+
+
+
+
+
+
+
+
+react projectname
+1) simple interst app
+------------------------------------------
+-react components
+-react hooks
+-react from
+-user input validation
+-react event
+
+2) Netflix
+------------------------------------------
+
+-component reusability
+-api calls  in react
+ - axios-api
+
+ syntax
+
+ post
+
+ axios Instance:
+ ------------------------
+  - its a independent object 
+  - using a single axios instance we can  make multiple request instead of reapeating each requests
+
+
+  useeeffect
+
+  -dependency is used to control the side effect /useeeffect
+  1)no dependency passed:useeeffect runs on every render
+   useeffect(()=> {
+    //runs on every render
+   })
+   2) an empty arrray:useffect runs in the first render
+    useeffect(()=> {runs only on first render
+    },[]);
+    3) props or state - useeffect runs in the first render and also when the values of props or state changes
+     useeffect(()=> {
+      //runs on the first render
+      //and any time any dependency value changes
+    },[prop,state]);
